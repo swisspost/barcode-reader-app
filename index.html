@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Reader App</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="container">
+    <div id="configGear" class="config-gear">&#9881;</div>
+    <div id="configSection" class="hidden config-section">
+        <h2>Configuration</h2>
+        <textarea id="configTextarea" rows="8" style="width:100%"></textarea>
+        <div style="margin-top:10px; display:flex; align-items:center;">
+            <button id="configSaveBtn">Save</button>
+            <span id="configSaveConfirm" class="hidden" style="margin-left:10px; color:green;">👍 Saved!</span>
+        </div>
+    </div>
+    <h1>Barcode Reader</h1>
+
+    <div class="upload-area" id="uploadArea">
+        <label for="barcodeInput" class="upload-label">
+            click or drag & drop for barcode detection on image
+        </label>
+        <input type="file" id="barcodeInput" accept="image/*" style="display:none;">
+    </div>
+    <div id="image_buttons" class="hidden">
+    <button id="rotateBtn">⟳</button>
+    <button id="cropBtn">Crop</button>
+    </div>
+    <div id="image-preview-area" class="preview-area hidden">
+        <div style="position: relative; display: inline-block;">
+            <img id="previewImage" src="" alt="Barcode Preview">
+            <div id="cropOverlay" class="hidden">
+                Double click to crop the image.
+                <div id="cropRect">
+                    <div class="handle top-left"></div>
+                    <div class="handle top-right"></div>
+                    <div class="handle bottom-left"></div>
+                    <div class="handle bottom-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="resultFoundArea" class="hidden">
+        <div id="barcodeResult">
+            <div id="barcodeValueFormatted"></div>
+            <input type="text" id="barcodeValue" />
+        </div>
+        <div id="links"></div>
+    </div>
+    <div id="noResultFoundArea" class="hidden">
+        No barcode detected in the image.
+    </div>
+    <div id="processingArea" class="hidden">
+        
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

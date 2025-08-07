@@ -1,0 +1,222 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Upload Area */
+.upload-area {
+    position: relative;
+}
+
+.upload-label {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+    background-color: #45a049;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Preview Area */
+.preview-area {
+    text-align: center;
+}
+
+#previewImage {
+    max-width: 100%;
+    max-height: 450px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+#barcodeResult {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#barcodeValue {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+
+#noResultFoundArea {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+#barcodeValueFormatted {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+#links{
+    padding: 10px
+}
+
+.hidden {
+    display: none;
+}
+
+.dragover {
+    border: 2px dashed #007bff;
+    background-color: #e6f0ff;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+        
+#image_buttons{
+    padding:5px;
+}
+
+#image_buttons button{
+    padding:5px;
+}
+
+#cropOverlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 10;
+    font-weight: bolder;
+    font-size: 17px;
+    color: #ff9800;
+    padding-top: 10px;
+}
+
+#cropOverlay:not(.hidden) {
+    pointer-events: auto;
+}
+
+#cropRect {
+    position: absolute;
+    border: 2px dashed #ff9800;
+    background: rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+}
+
+.handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ff9800;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 11;
+    cursor: pointer;
+}
+
+.handle.top-left { left: -6px; top: -6px; cursor: nwse-resize; }
+.handle.top-right { right: -6px; top: -6px; cursor: nesw-resize; }
+.handle.bottom-left { left: -6px; bottom: -6px; cursor: nesw-resize; }
+.handle.bottom-right { right: -6px; bottom: -6px; cursor: nwse-resize; }
+
+/* Config Section */
+.config-gear {
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.config-section {
+    position: absolute;
+    top: 55px;
+    right: 28px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 18px;
+    z-index: 99;
+    text-align: left;
+    width: 50%;
+    min-width: 500px;
+}
+
+.config-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#configTextarea {
+    font-family: monospace;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    resize: vertical;
+}
+
+#configSaveBtn {
+    padding: 6px 16px;
+    border-radius: 5px;
+    border: none;
+    background: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#configSaveBtn:hover {
+    background: #45a049;
+}
+
+#configSaveConfirm {
+    font-size: 1rem;
+    font-weight: bold;
+}
